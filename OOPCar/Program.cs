@@ -38,13 +38,34 @@ namespace OOPCar
                     }
                 }
             }
+            public string Markname
+            {
+                get { return markname; }
+            }
+            public string Modelname
+            {
+                get { return modelname; }
+            }
             public string Color
             {
                 get { return color; }
             }
+            public int Odometer
+            {
+                get { return odometer; }
+            }
+            public int Fueltank
+            {
+                get { return fueltank; }
+            }
             public void ShowCarData()
             {
                 Console.WriteLine($"markname: {markname}; modelname: {modelname}; registration {registration}; color {color}");
+            }
+            public void Drive()
+            {
+                odometer += 100;
+                fueltank -= 5;
             }
         }
 
@@ -54,8 +75,10 @@ namespace OOPCar
             Car newCar = new Car("Audi", "T8", "TV343", "yellow" );
             Console.WriteLine(newCar.Color);
             Console.WriteLine(newCar.Registration);
-
-
+            Console.WriteLine(newCar.Markname);
+            Console.WriteLine(newCar.Modelname);
+            Console.WriteLine(newCar.Odometer);
+            Console.WriteLine(newCar.Fueltank);
         }
     }
 }
