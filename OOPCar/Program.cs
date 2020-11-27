@@ -67,6 +67,10 @@ namespace OOPCar
                 odometer += 100;
                 fueltank -= 5;
             }
+            public void ShowCarDetails()
+            {
+                Console.WriteLine($"Model: {modelname}\n Mark: {markname}; \n {color}; \n registration: {registration}; \n Fueltank: {fueltank}; \n Odometer: {odometer};");
+            }
         }
 
         static void Main(string[] args)
@@ -79,6 +83,13 @@ namespace OOPCar
             Console.WriteLine(newCar.Modelname);
             Console.WriteLine(newCar.Odometer);
             Console.WriteLine(newCar.Fueltank);
+
+            while(newCar.Fueltank != 0)
+            {
+                newCar.Drive();
+            }
+            Console.WriteLine("The ride is over");
+            newCar.ShowCarDetails();
         }
     }
 }
